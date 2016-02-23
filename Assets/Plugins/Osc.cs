@@ -4,7 +4,10 @@ using System.Text;
 using System.Collections;
 using System.IO;
 using System;
+using OpenSoundControl;
 
+namespace OpenSoundControl
+{
   //The OscMessage class is a data structure that represents an OSC address and an arbitrary number of values to be sent to that address.
   public class OscMessage
   {
@@ -14,10 +17,10 @@ using System;
 
    // The list of values to be delivered to the Address.
    public ArrayList Values;
-    public OscMessage()
-    {
+   public OscMessage()
+   {
       Values = new ArrayList();
-    }
+   }
   }
 
   public delegate void OscMessageHandler( OscMessage oscM );
@@ -495,4 +498,4 @@ using System;
         return rawSize + (4 - pad);
     }
   }
-
+}

@@ -1,8 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-
-
+using OpenSoundControl;
 
 // Simple OSC test communication script
 [AddComponentMenu("Scripts/OSCTestReceiver")]
@@ -31,7 +30,6 @@ public class OSCTestReceiver : MonoBehaviour
     // Update is called every frame, if the MonoBehaviour is enabled.
     void Update()
     {
- 
     }
 
 
@@ -63,6 +61,6 @@ public class OSCTestReceiver : MonoBehaviour
     }
 		
 	public static void AllMessageHandler(OscMessage m){
-		print(m);
+		string msgString = Osc.OscMessageToString(m);
 	}
 }
